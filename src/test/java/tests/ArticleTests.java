@@ -55,6 +55,10 @@ public class ArticleTests extends CoreTestCase {
 
     @Test
     @DisplayName("Article is not present after clear")
+    @Features(value = {@Feature(value = "Search"),@Feature(value="Article"),@Feature(value="Clear")})
+    @Description("Check Article not visibility after clear")
+    @Step("Starting test testVisibilityArticlesAfterSearchAndClear")
+    @Severity(value = SeverityLevel.CRITICAL)
     public void testVisibilityArticlesAfterSearchAndClear() {
         SearchPageObject Search = SearchPageObjectFactory.get(driver);
         Search.initSearchInput();
@@ -69,6 +73,11 @@ public class ArticleTests extends CoreTestCase {
     }
 
     @Test
+    @DisplayName("Article is not present after clear")
+    @Features(value = {@Feature(value = "Search"),@Feature(value="Article")})
+    @Description("Check searched articles contains search word by assert contains search word on article name")
+    @Step("Starting test testCheckArticlesContainsSearchWord")
+    @Severity(value = SeverityLevel.NORMAL)
     public void testCheckArticlesContainsSearchWord() {
         SearchPageObject Search = SearchPageObjectFactory.get(driver);
         Search.initSearchInput();
@@ -82,6 +91,11 @@ public class ArticleTests extends CoreTestCase {
     }
 
     @Test
+    @DisplayName("Check article has title element")
+    @Features(value = {@Feature(value = "Search"),@Feature(value="Article")})
+    @Description("Check searched articles contains search word by assert contains search word on article name")
+    @Step("Starting test testCheckArticlesContainsSearchWord")
+    @Severity(value = SeverityLevel.NORMAL)
     public void testCheckArticleTitleElement() {
 
         SearchPageObject Search = SearchPageObjectFactory.get(driver);

@@ -108,7 +108,7 @@ abstract public class ArticlePageObject extends MainPageObject {
         );
     }
 
-    @Step("Adding the article to MyList in the existing forlder")
+    @Step("Adding the article to MyList in the existing folder")
     public void addArticleToMyListInExistingFolder(String name_of_folder) {
         this.waitForElementAndClick(
                 OPTIONS_BUTTON,
@@ -127,12 +127,14 @@ abstract public class ArticlePageObject extends MainPageObject {
         );
     }
 
+    @Step("Return amount of articles")
     public int getAmountOfArticles() {
         return this.getAmountOfElements(
                 COUNT_OF_ARTICLES
         );
     }
 
+    @Step("Close article (Does nothing for platform 'mobile_web')")
     public void closeArticle() {
         if(Platform.getInstance().isIOS() || Platform.getInstance().isAndroid()) {
             this.waitForElementAndClick(
